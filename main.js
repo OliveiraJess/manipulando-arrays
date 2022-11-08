@@ -1,4 +1,4 @@
-const dbFilm = [
+const dbFilms = [
   {
     "id": 1,
     "title": "o sexto sentido ",
@@ -61,4 +61,16 @@ const dbFilm = [
   },
 ];
 
-console.log(dbFilm)
+// console.log(dbFilm)
+
+const mapFilm = dbFilms.map((film) => {
+
+  return {
+    titulo: `${film.title} | ${film.imdb}`,
+    genero: 0
+
+  }
+
+})
+
+console.log(mapFilm)
