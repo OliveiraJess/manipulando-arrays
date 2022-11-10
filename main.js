@@ -156,17 +156,17 @@ const votesList = [
 const votingMovies = (films, votes) => {
 
   const mappedFilms = films.map(film => {
-    const filteredFilms = votes.filter(vote => {
-      return vote.filmTitle === film.title && vote.filmStreaming === film.streaming;
+    const filteredFilms = votes.filter(item => {
+      return item.filmTitle === film.title && item.filmStreaming === film.streaming;
     });
 
     return {
-      titleAndStreaming: `${film.title} | ${film.streaming}`,
-      vote: filteredFilms.length
+      title: `${film.title} | ${film.streaming}`,
+      votes: filteredFilms.length
     }
   });
 
-  const sortedfilms = mappedFilms.sort((a, b) => b.y - a.y);
+  const sortedfilms = mappedFilms.sort((a, b) => b.votes - a.votes);
 
   return sortedfilms.slice(0, 8);
 }
