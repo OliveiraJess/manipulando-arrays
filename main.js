@@ -156,7 +156,7 @@ const votesList = [
 
 const votingMovies = (films, votes) => {
 
-  const mappedFilms = films.map(film => {
+ const mappedFilms = films.map(film => {
     const filteredFilms = votes.filter(item => {
       return item.filmTitle === film.title && item.filmStreaming === film.streaming;
     });
@@ -173,7 +173,6 @@ const votingMovies = (films, votes) => {
   return sortedfilms.slice(0, 8);
 
 }
-
 
 //votação das plataformas
 let votesStreaming;
@@ -195,12 +194,31 @@ const getStreamingData = (votes) => {
   };
 }
 
+votingMovies(filmsList, votesList);
+getStreamingData(votesList);
 
-console.log('Votação (Filmes) ----------------------------');
-console.log(votingMovies(filmsList, votesList));
 
-console.log('Votação (Plataformas) --------------------------');
-console.log(getStreamingData(votesList));
+// filtrando titulos e votos da funcao votingMovies
+const titlesFilterVotingMovies = votingMovies(filmsList, votesList).map((item) => {
+  return item.title;
+});
+
+const votesFilterVotingMovies = votingMovies(filmsList, votesList).map((item) => {
+  return item.votes;
+});
+
+// console.log('Votação RESULTADOOOO ----------------------------');
+// console.log(titlesFilterVotingMovies);
+
+// console.log('Votação RESULTADOOOO ----------------------------');
+// console.log(votesFilterVotingMovies);
+
+
+// console.log('Votação (Filmes) ----------------------------');
+// console.log(votingMovies(filmsList, votesList));
+
+// console.log('Votação (Plataformas) --------------------------');
+// console.log(getStreamingData(votesList));
 
 //chart votação plataformas
 const ctx = document.getElementById('myChart');
@@ -237,4 +255,44 @@ const myChart = new Chart(ctx, {
   }
 });
 
+//chart votação filmes
+const context = document.getElementById('chart');
+const chart = new Chart(context, {
+  type: 'bar',
+  data: {
+    labels: titlesFilterVotingMovies,
+    datasets: [{
+      label: 'Votação (Filmes)',
+      data: votesFilterVotingMovies,
+      backgroundColor: [
+        'rgba(18, 10, 143, 0.2)',
+        'rgba(0, 100, 0, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+      ],
+      borderColor: [
+        'rgba(18, 10, 143, 1)',
+        'rgba(0, 100, 0, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
 
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
