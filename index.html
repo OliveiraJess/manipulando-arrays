@@ -5,18 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
   <title>Titulo</title>
 </head>
 
 <body>
-  <div>
-    <canvas width="400px" height="150px" id="myChart"></canvas>
-  </div>
+  <div class="style">
 
-  <div>
-    <canvas width="400px" height="150px" id="chart"></canvas>
-  </div>
+    <div class="child">
+      <canvas id="chart" aria-label="resultado votação filmes/plataformas" role="img" ></canvas>
+    </div>
 
+    <div class="child">
+      <canvas id="myChart" aria-label="resultado votação plataformas" role="img"></canvas>
+    </div>
+
+
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./main.js"></script>
 </body>

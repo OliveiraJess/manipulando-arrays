@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+.style {
+  margin: 5% 10% 5% 10%;
+}
+
+.child {
+margin-bottom: 5%;
+}
+
+.rosca {
+  width: 50%;
+}

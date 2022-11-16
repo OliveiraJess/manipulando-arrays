@@ -1,6 +1,5 @@
 //lista de filmes e seus streaming
-const filmsList = [
-  {
+const filmsList = [{
     "id": 1,
     "title": "o sexto sentido",
     "genre": "suspense",
@@ -73,8 +72,7 @@ const filmsList = [
 ]
 
 //votação da lista de filmes
-const votesList = [
-  {
+const votesList = [{
     "filmTitle": "o sexto sentido",
     "filmGenre": "suspense",
     "filmStreaming": "star"
@@ -149,6 +147,16 @@ const votesList = [
     "filmGenre": "terror",
     "filmStreaming": "hbo max"
   },
+  {
+    "filmTitle": "o exorcista",
+    "filmGenre": "terror",
+    "filmStreaming": "youtube"
+  },
+  {
+    "filmTitle": "o orfanato",
+    "filmGenre": "terror",
+    "filmStreaming": "youtube"
+  },
 
 ]
 
@@ -156,7 +164,7 @@ const votesList = [
 
 const votingMovies = (films, votes) => {
 
- const mappedFilms = films.map(film => {
+  const mappedFilms = films.map(film => {
     const filteredFilms = votes.filter(item => {
       return item.filmTitle === film.title && item.filmStreaming === film.streaming;
     });
@@ -220,49 +228,16 @@ const votesFilterVotingMovies = votingMovies(filmsList, votesList).map((item) =>
 // console.log('Votação (Plataformas) --------------------------');
 // console.log(getStreamingData(votesList));
 
-//chart votação plataformas
-const ctx = document.getElementById('myChart');
-const myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: streamings,
-    datasets: [{
-      label: 'Votação (Plataformas)',
-      data: votesStreaming,
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-      ],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
 
-//chart votação filmes
+
+//chart bar - votação filmes
 const context = document.getElementById('chart');
 const chart = new Chart(context, {
   type: 'bar',
   data: {
     labels: titlesFilterVotingMovies,
     datasets: [{
-      label: 'Votação (Filmes)',
+      label: 'Votação (Filmes/Plataformas)',
       data: votesFilterVotingMovies,
       backgroundColor: [
         'rgba(18, 10, 143, 0.2)',
@@ -285,7 +260,49 @@ const chart = new Chart(context, {
         'rgba(255, 159, 64, 1)',
 
       ],
-      borderWidth: 1
+      borderWidth: 1,
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+//chart doughnut - votação plataformas
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: streamings,
+    datasets: [{
+      label: 'Votação (Plataformas)',
+      data: votesStreaming,
+      backgroundColor: [
+        'rgba(18, 10, 143, 0.2)',
+        'rgba(0, 100, 0, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+      ],
+      borderColor: [
+        'rgba(18, 10, 143, 1)',
+        'rgba(0, 100, 0, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+
+      ],
+      hoverOffset: 4
     }]
   },
   options: {
