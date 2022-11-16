@@ -153,6 +153,7 @@ const votesList = [
 ]
 
 //filmes e streaming mais votados
+
 const votingMovies = (films, votes) => {
 
   const mappedFilms = films.map(film => {
@@ -162,21 +163,25 @@ const votingMovies = (films, votes) => {
 
     return {
       title: `${film.title} | ${film.streaming}`,
-      votes: filteredFilms.length
+      votes: filteredFilms.length,
     }
+
   });
 
   const sortedfilms = mappedFilms.sort((a, b) => b.votes - a.votes);
 
   return sortedfilms.slice(0, 8);
+
 }
 
+
 //votação das plataformas
+let votesStreaming;
+const streamings = ['star', 'hbo max', 'youtube', 'netflix', 'amazon'];
+
 const getStreamingData = (votes) => {
 
-  const streamings = ['star', 'hbo max', 'youtube', 'netflix', 'amazon'];
-
-  const votesStreaming = streamings.map(streaming => {
+  votesStreaming = streamings.map(streaming => {
     const filteredFilm = votes.filter(vote => {
       return streaming === vote.filmStreaming;
     });
@@ -196,3 +201,39 @@ console.log(votingMovies(filmsList, votesList));
 
 console.log('Votação (Plataformas) --------------------------');
 console.log(getStreamingData(votesList));
+
+//chart votação plataformas
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: streamings,
+    datasets: [{
+      label: 'Votação (Plataformas)',
+      data: votesStreaming,
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
