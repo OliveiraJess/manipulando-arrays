@@ -10,16 +10,17 @@
 </head>
 
 <body>
-  <div class="style">
 
-    <div class="child">
-      <canvas id="chart" aria-label="resultado votação filmes/plataformas" role="img" ></canvas>
+  <div class="chart">
+
+    <div class="chart__films">
+
+      <canvas class="bar" id="chartFilms" aria-label="resultado votação filmes/plataformas" role="img"></canvas>
     </div>
 
-    <div class="child">
-      <canvas id="myChart" aria-label="resultado votação plataformas" role="img"></canvas>
+    <div class="chart__streaming">
+      <canvas class="doughnut" id="chartStreaming" aria-label="resultado votação plataformas" role="img"></canvas>
     </div>
-
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -229,10 +229,9 @@ const votesFilterVotingMovies = votingMovies(filmsList, votesList).map((item) =>
 // console.log(getStreamingData(votesList));
 
 
-
 //chart bar - votação filmes
-const context = document.getElementById('chart');
-const chart = new Chart(context, {
+const context = document.getElementById('chartFilms');
+const chartFilms = new Chart(context, {
   type: 'bar',
   data: {
     labels: titlesFilterVotingMovies,
@@ -261,20 +260,32 @@ const chart = new Chart(context, {
 
       ],
       borderWidth: 1,
+      // hoverBackgroundColor: "rgba(255,99,132,0.4)",
+      // hoverBorderColor: "rgba(255,99,132,1)",
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+      },
+      x: {
+        grid: {
+          display: false,
+        }
       }
-    }
+    },
+    // plugins: {
+    //   legend: {
+    //     display: true,
+    //   }
+    // }
   }
 });
 
 //chart doughnut - votação plataformas
-const ctx = document.getElementById('myChart');
-const myChart = new Chart(ctx, {
+const ctx = document.getElementById('chartStreaming');
+const chartStreaming = new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: streamings,
@@ -308,8 +319,18 @@ const myChart = new Chart(ctx, {
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+      },
+      x: {
+        grid: {
+          display: false,
+        }
       }
-    }
+    },
+    // plugins: {
+    //   legend: {
+    //     display: true,
+    //   }
+    // }
   }
 });

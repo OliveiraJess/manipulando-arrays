@@ -1,15 +1,32 @@
-body {
+* {
   margin: 0;
+  padding: 0;
 }
 
-.style {
-  margin: 5% 10% 5% 10%;
+.chart {
+  margin: 5%;
+  display: flex;
+  /* flex-direction: column; */
+  max-width: 600px;
 }
 
-.child {
-margin-bottom: 5%;
+.chart__films {
+  margin-right: 3%;
+
 }
 
-.rosca {
-  width: 50%;
+/* .chart__streaming {} */
+
+.bar {
+  width: 800px !important;
+  height: 450px !important;
+}
+
+.doughnut {
+  width: 450px !important;
+    height: 450px !important;
+}
+
+canvas {
+  border: 2px solid black;
 }
