@@ -20,7 +20,7 @@
 <img height="400px" src="https://github.com/OliveiraJess/manipulando-arrays/blob/main/img/votesList.png" alt="lista de da votação dos filmes com seus streamings" />
 </div>
 
-<p>Para fazer a manipulação dos dados mostrados acima foi utilizado o map e o filter para retornar os filmes com seus respectivos streamings e a quantidades de votos que cada um recebeu. Foi utilizado o sort para exibir primeiro os filmes que obteram o maior número de votos.</p>
+<p>Para fazer a manipulação dos dados mostrados acima foi utilizado o map e o filter para retornar os filmes com seus respectivos streamings e a quantidades de votos que cada um recebeu. Foi utilizado o sort para exibir primeiro os filmes que obtiveram o maior número de votos.</p>
 
 <div align="center">
 <img src="https://github.com/OliveiraJess/manipulando-arrays/blob/main/img/votingMovies.png" alt="Resultado da votação dos filmes com seus streamings" />
@@ -28,7 +28,7 @@
 </div>
 
 <p>Para exibir os resultados em um gráfico foi utilizado o Chart.js.</p>
-<p>Optei em utilizar o grafico Bar Chart para exibir o resultado da votação dos filmes com seus streamings.</p>
+<p>Optei em utilizar o gráfico Bar Chart para exibir o resultado da votação dos filmes com seus streamings.</p>
 
 <div align="center">
 <img height="400px" src="https://github.com/OliveiraJess/manipulando-arrays/blob/main/img/graficoBar.png" alt="Resultado da votação dos filmes com seus streamings no gráfico" />
