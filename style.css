@@ -1,25 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .chart {
   margin: 5%;
   display: flex;
-  /* flex-direction: row; */
-  /* max-width: 600px; */
 }
-
-
-
-/* .chart__streaming {} */
-
-
 
 canvas {
   border: 2px solid black;
 }
-
 
 
 @media screen and (min-width: 320px) {

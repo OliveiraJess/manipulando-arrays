@@ -239,29 +239,29 @@ const chartFilms = new Chart(context, {
       label: 'Votação (Filmes/Plataformas)',
       data: votesFilterVotingMovies,
       backgroundColor: [
-        'rgba(18, 10, 143, 0.2)',
-        'rgba(0, 100, 0, 0.2)',
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
+        'rgba(0,0,205, 0.2)',
+        'rgba(60,179,113, 0.2)',
+        'rgba(255,99,71, 0.2)',
+        'rgba(0,255,255, 0.2)',
+        'rgba(255,215,0, 0.2)',
+        'rgba(127,255,212, 0.2)',
+        'rgba(148,0,211, 0.2)',
+        'rgba(255,69,0, 0.2)',
       ],
       borderColor: [
-        'rgba(18, 10, 143, 1)',
-        'rgba(0, 100, 0, 1)',
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
+        'rgba(0,0,205, 1)',
+        'rgba(60,179,113, 1)',
+        'rgba(255,99,71, 1)',
+        'rgba(0,255,255, 1)',
+        'rgba(255,215,0, 1)',
+        'rgba(127,255,212, 1)',
+        'rgba(148,0,211, 1)',
+        'rgba(255,69,0, 1)',
 
       ],
       borderWidth: 1,
-      // hoverBackgroundColor: "rgba(255,99,132,0.4)",
-      // hoverBorderColor: "rgba(255,99,132,1)",
+      hoverBackgroundColor: "rgba(255,192,203,0.2)",
+      hoverBorderColor: "rgba(255,192,203,1)",
     }]
   },
   options: {
@@ -274,12 +274,7 @@ const chartFilms = new Chart(context, {
           display: false,
         }
       }
-    },
-    // plugins: {
-    //   legend: {
-    //     display: true,
-    //   }
-    // }
+    }
   }
 });
 
@@ -293,25 +288,18 @@ const chartStreaming = new Chart(ctx, {
       label: 'Votação (Plataformas)',
       data: votesStreaming,
       backgroundColor: [
-        'rgba(18, 10, 143, 0.2)',
-        'rgba(0, 100, 0, 0.2)',
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
+        'rgba(148,0,211,0.2)',
+        'rgba(60,179,113,0.2)',
+        'rgba(255,99,71,0.2)',
+        'rgba(0,255,255,0.2)',
+        'rgba(255,215,0,0.2)',
       ],
       borderColor: [
-        'rgba(18, 10, 143, 1)',
-        'rgba(0, 100, 0, 1)',
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-
+        'rgba(148,0,211, 1)',
+        'rgba(60,179,113, 1)',
+        'rgba(255,99,71, 1)',
+        'rgba(0,255,255, 1)',
+        'rgba(255,215,0, 1)',
       ],
       hoverOffset: 4
     }]
@@ -326,11 +314,6 @@ const chartStreaming = new Chart(ctx, {
           display: false,
         }
       }
-    },
-    // plugins: {
-    //   legend: {
-    //     display: true,
-    //   }
-    // }
+    }
   }
 });
