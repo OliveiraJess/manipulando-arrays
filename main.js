@@ -225,8 +225,8 @@ const votesFilterVotingMovies = votingMovies(filmsList, votesList).map((item) =>
 // console.log('Votação (Filmes) ----------------------------');
 // console.log(votingMovies(filmsList, votesList));
 
-// console.log('Votação (Plataformas) --------------------------');
-// console.log(getStreamingData(votesList));
+console.log('Votação (Plataformas) --------------------------');
+console.log(getStreamingData(votesList));
 
 
 //chart bar - votação filmes
