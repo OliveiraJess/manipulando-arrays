@@ -236,7 +236,7 @@ const chartFilms = new Chart(context, {
   data: {
     labels: titlesFilterVotingMovies,
     datasets: [{
-      label: 'Votação (Filmes/Plataformas)',
+      label: 'Votação (Filmes/Streaming)',
       data: votesFilterVotingMovies,
       backgroundColor: [
         'rgba(0,0,205, 0.2)',
